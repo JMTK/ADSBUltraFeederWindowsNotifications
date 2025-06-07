@@ -26,8 +26,7 @@ while (true)
     {
         Console.WriteLine("Checking for flights...");
         HttpResponseMessage response = await httpClient.GetAsync(url);
-        string aircraftResponseS = await response.Content.ReadAsStringAsync();
-        AircraftResponse aircraftResponse = JsonSerializer.Deserialize<AircraftResponse>(aircraftResponseS, new JsonSerializerOptions()
+        var aircraftResponse = await response.Content.ReadFromJsonAsync<AircraftResponse>(new JsonSerializerOptions()
         {
             PropertyNameCaseInsensitive = true
         });
