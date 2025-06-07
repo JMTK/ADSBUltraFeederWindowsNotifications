@@ -73,10 +73,6 @@ while (true)
                 alreadyNotified.Remove(val.Key);
             val = new KeyValuePair<string, DateTime>();
         }
-        response = (HttpResponseMessage)null;
-        aircraftResponseS = (string)null;
-        aircraftResponse = (AircraftResponse)null;
-        flightFlyingOver = (Aircraft)null;
     }
     catch (Exception ex)
     {
