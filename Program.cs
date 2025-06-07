@@ -48,9 +48,7 @@ while (true)
                 Photo photo = Enumerable.FirstOrDefault<Photo>(responseImage.photos);
                 if (photo != null)
                 {
-                    message = $"{message} {photo.photographer}";
-                    if (!string.IsNullOrEmpty(photo.link))
-                        message = $"{message} ({photo.link})";
+                    message = $"{message}{Environment.NewLine}{photo.photographer}";
                     if (!string.IsNullOrEmpty(photo.thumbnail?.src))
                     {
                         byte[] thumbnailBytes = await httpClient.GetByteArrayAsync(photo.thumbnail_large.src);
